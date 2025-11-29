@@ -4,65 +4,167 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Bhise - Web Developer & Problem Solver</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS to enforce dark mode and adjust font weight for the Vercel look */
+        :root {
+            --vercel-blue: #0070f3;
+        }
+
+        body {
+            /* Ensuring a full dark background and nice font */
+            background-color: #000000; 
+            color: #f0f0f0;
+            font-family: ui-sans-serif, system-ui, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Enforce a heavy, modern font weight for headings */
+        h1, h2, h3 {
+            font-weight: 800;
+        }
+        
+        /* The span for the changing text to be highlighted */
+        .changing-text {
+            color: var(--vercel-blue);
+            display: inline-block;
+            min-width: 250px; /* To prevent layout shift on text change */
+        }
+        
+        /* Navigation border */
+        header {
+            border-bottom: 1px solid #1a1a1a;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <nav>
-            <a href="#home" class="logo">Aditya Bhise</a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-10 bg-black bg-opacity-95 backdrop-blur-sm">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
+            <a href="#home" class="text-xl font-bold tracking-tight hover:text-white transition duration-300">
+                Aditya Bhise
+            </a>
+            <div class="space-x-6 text-gray-400">
+                <a href="#about" class="hover:text-white transition duration-300">About</a>
+                <a href="#projects" class="hover:text-white transition duration-300">Projects</a>
+                <a href="#contact" class="hover:text-white transition duration-300">Contact</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero-section">
-            <h1 class="dynamic-heading">
-                I'm <span class="static-text">Aditya Bhise</span>.
+        <section id="home" class="min-h-[85vh] flex flex-col justify-center items-center text-center px-6 max-w-5xl mx-auto">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter mb-2">
+                I'm <span class="text-white">Aditya Bhise</span>.
             </h1>
-            <h2 class="trailing-text-container">
+            <h2 class="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter text-gray-200">
                 I'm <span id="trailing-text" class="changing-text">curious</span>
             </h2>
 
-            <p class="tagline">
-                Passionate about turning complex ideas into elegant code. A dedicated problem-solver building minimal, high-performance web experiences.
+            <p class="text-lg md:text-xl max-w-2xl mt-8 text-gray-400">
+                Passionate about turning complex ideas into **elegant, high-performance code**. A dedicated problem-solver building minimal, effective web experiences. Let's build something great.
             </p>
         </section>
 
-        <section id="projects" class="projects-section">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Project Title 1</h3>
-                    <p>A brief description of your project and the technologies used (e.g., React, Node.js).</p>
-                    <a href="#" target="_blank">View Live</a> | <a href="#" target="_blank">GitHub Repo</a>
+        <section id="projects" class="py-20 md:py-32 px-6 max-w-7xl mx-auto">
+            <h2 class="text-4xl font-extrabold mb-12 text-center border-b-2 border-[#0070f3] pb-2 inline-block mx-auto text-[#0070f3]">
+                Featured Projects
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:shadow-2xl hover:shadow-[#0070f3]/30 transition duration-500 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-2 text-[#0070f3]">Project Title 1</h3>
+                    <p class="text-gray-400 mb-4">A brief description of your project and the core technologies used (e.g., React, Node.js, Next.js).</p>
+                    <div class="space-x-4">
+                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">View Live &rarr;</a>
+                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">GitHub Repo</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <h3>Project Title 2</h3>
-                    <p>A brief description of your project and the technologies used (e.g., HTML, CSS, JS).</p>
-                    <a href="#" target="_blank">View Live</a> | <a href="#" target="_blank">GitHub Repo</a>
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:shadow-2xl hover:shadow-[#0070f3]/30 transition duration-500 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-2 text-[#0070f3]">Project Title 2</h3>
+                    <p class="text-gray-400 mb-4">Focuses on pure frontend skills. Minimal design using HTML, Tailwind, and plain JavaScript.</p>
+                    <div class="space-x-4">
+                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">View Live &rarr;</a>
+                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">GitHub Repo</a>
+                    </div>
                 </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:shadow-2xl hover:shadow-[#0070f3]/30 transition duration-500 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-2 text-[#0070f3]">Project Title 3</h3>
+                    <p class="text-gray-400 mb-4">Could be a smaller utility, showcasing API integration or state management in a framework.</p>
+                    <div class="space-x-4">
+                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">View Live &rarr;</a>
+                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">GitHub Repo</a>
+                    </div>
                 </div>
+            </div>
         </section>
 
-        <section id="contact" class="contact-section">
-            <h2 class="section-title">Let's Connect</h2>
-            <p>I'm always open to new opportunities and collaborations. Find me here:</p>
-            <div class="social-links">
-                <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a> | 
-                <a href="YOUR_GITHUB_URL" target="_blank">GitHub</a> | 
-                <a href="YOUR_TWITTER_URL" target="_blank">Twitter/X</a>
-                </div>
+        <section id="contact" class="py-20 px-6 max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-6 text-white">
+                Let's Build Together.
+            </h2>
+            <p class="text-lg text-gray-400 mb-8">
+                I'm always open to new opportunities, collaborations, and conversations about technology. Feel free to reach out!
+            </p>
+            <div class="social-links space-x-6">
+                <a href="YOUR_LINKEDIN_URL" target="_blank" class="text-xl text-[#0070f3] hover:text-white transition duration-300">LinkedIn</a>
+                <a href="YOUR_GITHUB_URL" target="_blank" class="text-xl text-[#0070f3] hover:text-white transition duration-300">GitHub</a>
+                <a href="mailto:YOUR_EMAIL@example.com" class="text-xl text-[#0070f3] hover:text-white transition duration-300">Email</a>
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Aditya Bhise. Built with simplicity.</p>
+    <footer class="text-center py-8 text-gray-600 border-t border-gray-800 mt-12">
+        <p class="text-sm">&copy; 2025 Aditya Bhise. Built with speed and simplicity (and Tailwind).</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const textElement = document.getElementById('trailing-text');
+            const words = [
+                "curious", 
+                "solving problems", 
+                "a Web Developer",
+                "Aditya Bhise" // Can change to something like "a passionate learner"
+            ];
+            let wordIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typingSpeed = 100;
+            const deletingSpeed = 50;
+            const delayBetweenWords = 1500;
+
+            function typeEffect() {
+                const currentWord = words[wordIndex];
+                let currentText = currentWord.substring(0, charIndex);
+                textElement.textContent = currentText;
+
+                if (!isDeleting) {
+                    // Typing
+                    if (charIndex < currentWord.length) {
+                        charIndex++;
+                        setTimeout(typeEffect, typingSpeed);
+                    } else {
+                        // Done typing, start deleting after a delay
+                        isDeleting = true;
+                        setTimeout(typeEffect, delayBetweenWords);
+                    }
+                } else {
+                    // Deleting
+                    if (charIndex > 0) {
+                        charIndex--;
+                        setTimeout(typeEffect, deletingSpeed);
+                    } else {
+                        // Done deleting, move to next word
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        setTimeout(typeEffect, typingSpeed);
+                    }
+                }
+            }
+
+            typeEffect();
+        });
+    </script>
 </body>
 </html>
