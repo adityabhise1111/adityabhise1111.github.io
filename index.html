@@ -1,107 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aditya Bhise — Web Developer</title>
-  <meta name="description" content="Aditya Bhise — Web developer. Curious. Problem solver. Portfolio of minimal projects." />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Bhise - Web Developer & Problem Solver</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="page">
-    <header class="top">
-      <div class="identity">
-        <div class="logo" aria-hidden="true">AB</div>
-        <div>
-          <h1 class="name">Aditya Bhise</h1>
-          <p class="role">Web developer · Curious · Problem solver</p>
-        </div>
-      </div>
-
-      <nav class="social">
-        <!-- Replace # with your real profile URLs -->
-        <a href="#" aria-label="GitHub" class="icon" title="GitHub">
-          <!-- GitHub SVG -->
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1-5-2-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 10.5 20.1V24"></path></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn" class="icon" title="LinkedIn">
-          <!-- LinkedIn SVG -->
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-14h4v2"></path><rect x="2" y="9" width="4" height="11"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-        </a>
-        <a href="#" aria-label="Email" class="icon" title="Email">
-          <!-- Mail SVG -->
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"></path><path d="M22 6l-10 7L2 6"></path></svg>
-        </a>
-      </nav>
+    <header>
+        <nav>
+            <a href="#home" class="logo">Aditya Bhise</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
     </header>
 
-    <section class="about">
-      <p class="lead">
-        I build fast, minimal web experiences. I enjoy turning small ideas into tidy, useful interfaces — and learning while shipping.
-      </p>
+    <main>
+        <section id="home" class="hero-section">
+            <h1 class="dynamic-heading">
+                I'm <span class="static-text">Aditya Bhise</span>.
+            </h1>
+            <h2 class="trailing-text-container">
+                I'm <span id="trailing-text" class="changing-text">curious</span>
+            </h2>
 
-      <div class="blurb">
-        <p>I'm curious about how things work and how to make them simpler.</p>
-        <p>I solve problems by breaking them down and shipping small, iterative improvements.</p>
-        <p>I focus on clean UI, good developer ergonomics, and pragmatic code.</p>
-      </div>
-    </section>
+            <p class="tagline">
+                Passionate about turning complex ideas into elegant code. A dedicated problem-solver building minimal, high-performance web experiences.
+            </p>
+        </section>
 
-    <section class="projects">
-      <h2 class="section-title">Selected projects</h2>
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of your project and the technologies used (e.g., React, Node.js).</p>
+                    <a href="#" target="_blank">View Live</a> | <a href="#" target="_blank">GitHub Repo</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project Title 2</h3>
+                    <p>A brief description of your project and the technologies used (e.g., HTML, CSS, JS).</p>
+                    <a href="#" target="_blank">View Live</a> | <a href="#" target="_blank">GitHub Repo</a>
+                </div>
+                </div>
+        </section>
 
-      <ul class="cards">
-        <li class="card">
-          <a href="#" class="card-link">
-            <div class="card-left">
-              <strong>Patreon Clone</strong>
-              <span class="muted">Next.js · MongoDB · Razorpay</span>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-        </li>
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>I'm always open to new opportunities and collaborations. Find me here:</p>
+            <div class="social-links">
+                <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a> | 
+                <a href="YOUR_GITHUB_URL" target="_blank">GitHub</a> | 
+                <a href="YOUR_TWITTER_URL" target="_blank">Twitter/X</a>
+                </div>
+        </section>
+    </main>
 
-        <li class="card">
-          <a href="#" class="card-link">
-            <div class="card-left">
-              <strong>ToDo App</strong>
-              <span class="muted">React · MongoDB · CRUD</span>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-        </li>
-
-        <li class="card">
-          <a href="#" class="card-link">
-            <div class="card-left">
-              <strong>Password Manager</strong>
-              <span class="muted">Local encryption · Utility</span>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-        </li>
-
-        <li class="card">
-          <a href="#" class="card-link">
-            <div class="card-left">
-              <strong>Client Business App</strong>
-              <span class="muted">PHP · MySQL · Delivered</span>
-            </div>
-            <span class="arrow">↗</span>
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <footer class="foot">
-      <div>© <span id="year"></span> Aditya Bhise</div>
-      <div class="foot-right">Made minimal — no frameworks</div>
+    <footer>
+        <p>&copy; 2025 Aditya Bhise. Built with simplicity.</p>
     </footer>
-  </main>
 
-  <script>
-    // small nicety: auto year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
