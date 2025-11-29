@@ -4,118 +4,262 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya Bhise - Web Developer & Problem Solver</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
-        /* Custom CSS to enforce dark mode and adjust font weight for the Vercel look */
+        /* CSS Variables for easy color adjustments */
         :root {
-            --vercel-blue: #0070f3;
+            --bg-color: #000000;
+            --text-color: #f0f0f0;
+            --primary-color: #0070f3; /* Vercel Blue */
+            --link-color: var(--primary-color);
+            --border-color: #1a1a1a;
+            --font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
+        /* Global Reset and Body Styles */
         body {
-            /* Ensuring a full dark background and nice font */
-            background-color: #000000; 
-            color: #f0f0f0;
-            font-family: ui-sans-serif, system-ui, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
         }
 
-        /* Enforce a heavy, modern font weight for headings */
+        /* Typography */
         h1, h2, h3 {
-            font-weight: 800;
+            margin: 0.5rem 0;
+            font-weight: 800; /* Extra bold for modern look */
+            letter-spacing: -0.05em;
         }
-        
-        /* The span for the changing text to be highlighted */
-        .changing-text {
-            color: var(--vercel-blue);
-            display: inline-block;
-            min-width: 250px; /* To prevent layout shift on text change */
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        
-        /* Navigation border */
+
+        a:hover {
+            color: #4a91ff; /* Lighter blue on hover */
+        }
+
+        /* Layout Structure */
+        section {
+            padding: 5rem 1.5rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* Header and Navigation */
         header {
-            border-bottom: 1px solid #1a1a1a;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .nav-links a {
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+            color: #888;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-color);
+        }
+
+        /* Hero Section (Centerpiece) */
+        .hero-section {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        /* Responsive Text Sizing */
+        .hero-section h1, .hero-section h2 {
+            font-size: clamp(2.5rem, 8vw, 5rem); 
+        }
+
+        .hero-section h2 {
+            color: #ccc;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            max-width: 48rem;
+            margin-top: 2rem;
+            color: #999;
+        }
+
+        /* Dynamic Text Effect Styling */
+        .changing-text {
+            color: var(--primary-color);
+            display: inline-block;
+            min-width: 250px; /* Crucial: Prevents layout shift */
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding-top: 0;
+        }
+        
+        .section-title {
+            font-size: 2.25rem;
+            margin-bottom: 2rem;
+            text-align: left;
+            border-bottom: 2px solid var(--primary-color);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #0d0d0d;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-0.25rem);
+            box-shadow: 0 10px 25px rgba(0, 112, 243, 0.2);
+            border-color: var(--primary-color);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .project-links a {
+            margin-right: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Contact and Footer */
+        .contact-section {
+            text-align: center;
+        }
+
+        .social-links a {
+            margin: 0 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.875rem;
+            color: #666;
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <header class="sticky top-0 z-10 bg-black bg-opacity-95 backdrop-blur-sm">
-        <nav class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
-            <a href="#home" class="text-xl font-bold tracking-tight hover:text-white transition duration-300">
-                Aditya Bhise
-            </a>
-            <div class="space-x-6 text-gray-400">
-                <a href="#about" class="hover:text-white transition duration-300">About</a>
-                <a href="#projects" class="hover:text-white transition duration-300">Projects</a>
-                <a href="#contact" class="hover:text-white transition duration-300">Contact</a>
+    <header>
+        <nav>
+            <a href="#home" class="logo">Aditya Bhise</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="min-h-[85vh] flex flex-col justify-center items-center text-center px-6 max-w-5xl mx-auto">
-            <h1 class="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter mb-2">
-                I'm <span class="text-white">Aditya Bhise</span>.
+        <section id="home" class="hero-section">
+            <h1>
+                I'm <span class="static-text">Aditya Bhise</span>.
             </h1>
-            <h2 class="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter text-gray-200">
+            <h2>
                 I'm <span id="trailing-text" class="changing-text">curious</span>
             </h2>
 
-            <p class="text-lg md:text-xl max-w-2xl mt-8 text-gray-400">
-                Passionate about turning complex ideas into **elegant, high-performance code**. A dedicated problem-solver building minimal, effective web experiences. Let's build something great.
+            <p class="tagline">
+                Passionate about turning complex ideas into elegant code. A dedicated problem-solver building minimal, high-performance web experiences.
             </p>
         </section>
 
-        <section id="projects" class="py-20 md:py-32 px-6 max-w-7xl mx-auto">
-            <h2 class="text-4xl font-extrabold mb-12 text-center border-b-2 border-[#0070f3] pb-2 inline-block mx-auto text-[#0070f3]">
-                Featured Projects
-            </h2>
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Featured Projects</h2>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:shadow-2xl hover:shadow-[#0070f3]/30 transition duration-500 transform hover:-translate-y-1">
-                    <h3 class="text-2xl font-semibold mb-2 text-[#0070f3]">Project Title 1</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Project Title 1</h3>
                     <p class="text-gray-400 mb-4">A brief description of your project and the core technologies used (e.g., React, Node.js, Next.js).</p>
-                    <div class="space-x-4">
-                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">View Live &rarr;</a>
-                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">GitHub Repo</a>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View Live &rarr;</a>
+                        <a href="#" target="_blank">GitHub Repo</a>
                     </div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:shadow-2xl hover:shadow-[#0070f3]/30 transition duration-500 transform hover:-translate-y-1">
-                    <h3 class="text-2xl font-semibold mb-2 text-[#0070f3]">Project Title 2</h3>
-                    <p class="text-gray-400 mb-4">Focuses on pure frontend skills. Minimal design using HTML, Tailwind, and plain JavaScript.</p>
-                    <div class="space-x-4">
-                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">View Live &rarr;</a>
-                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">GitHub Repo</a>
+                <div class="project-card">
+                    <h3>Project Title 2</h3>
+                    <p class="text-gray-400 mb-4">Focuses on pure frontend skills. Minimal design using HTML, CSS, and plain JavaScript.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View Live &rarr;</a>
+                        <a href="#" target="_blank">GitHub Repo</a>
                     </div>
                 </div>
-                <div class="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:shadow-2xl hover:shadow-[#0070f3]/30 transition duration-500 transform hover:-translate-y-1">
-                    <h3 class="text-2xl font-semibold mb-2 text-[#0070f3]">Project Title 3</h3>
-                    <p class="text-gray-400 mb-4">Could be a smaller utility, showcasing API integration or state management in a framework.</p>
-                    <div class="space-x-4">
-                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">View Live &rarr;</a>
-                        <a href="#" target="_blank" class="text-sm font-medium hover:underline">GitHub Repo</a>
+                <div class="project-card">
+                    <h3>Project Title 3</h3>
+                    <p class="text-gray-400 mb-4">A utility project showcasing API integration or state management in a framework.</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View Live &rarr;</a>
+                        <a href="#" target="_blank">GitHub Repo</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="py-20 px-6 max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-extrabold mb-6 text-white">
-                Let's Build Together.
-            </h2>
+        <section id="contact" class="contact-section">
+            <h2 class="section-title" style="border: none;">Let's Build Together.</h2>
             <p class="text-lg text-gray-400 mb-8">
                 I'm always open to new opportunities, collaborations, and conversations about technology. Feel free to reach out!
             </p>
-            <div class="social-links space-x-6">
-                <a href="YOUR_LINKEDIN_URL" target="_blank" class="text-xl text-[#0070f3] hover:text-white transition duration-300">LinkedIn</a>
-                <a href="YOUR_GITHUB_URL" target="_blank" class="text-xl text-[#0070f3] hover:text-white transition duration-300">GitHub</a>
-                <a href="mailto:YOUR_EMAIL@example.com" class="text-xl text-[#0070f3] hover:text-white transition duration-300">Email</a>
+            <div class="social-links">
+                <a href="YOUR_LINKEDIN_URL" target="_blank">LinkedIn</a>
+                <a href="YOUR_GITHUB_URL" target="_blank">GitHub</a>
+                <a href="mailto:YOUR_EMAIL@example.com">Email</a>
             </div>
         </section>
     </main>
 
-    <footer class="text-center py-8 text-gray-600 border-t border-gray-800 mt-12">
-        <p class="text-sm">&copy; 2025 Aditya Bhise. Built with speed and simplicity (and Tailwind).</p>
+    <footer>
+        <p>&copy; 2025 Aditya Bhise. Built with simplicity and speed.</p>
     </footer>
 
     <script>
@@ -125,7 +269,7 @@
                 "curious", 
                 "solving problems", 
                 "a Web Developer",
-                "Aditya Bhise" // Can change to something like "a passionate learner"
+                "Aditya Bhise"
             ];
             let wordIndex = 0;
             let charIndex = 0;
