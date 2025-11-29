@@ -1,45 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Aditya Bhise — Web Developer</title>
+  <meta name="description" content="Aditya Bhise — Web developer. Curious. Problem solver. Portfolio of minimal projects." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <main class="page">
+    <header class="top">
+      <div class="identity">
+        <div class="logo" aria-hidden="true">AB</div>
+        <div>
+          <h1 class="name">Aditya Bhise</h1>
+          <p class="role">Web developer · Curious · Problem solver</p>
+        </div>
+      </div>
 
-  <header>
-    <h1>Aditya Bhise</h1>
-    <p class="subtitle">Web Developer • Curious Learner • Problem Solver</p>
-  </header>
+      <nav class="social">
+        <!-- Replace # with your real profile URLs -->
+        <a href="#" aria-label="GitHub" class="icon" title="GitHub">
+          <!-- GitHub SVG -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1-5-2-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 10.5 20.1V24"></path></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="icon" title="LinkedIn">
+          <!-- LinkedIn SVG -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-14h4v2"></path><rect x="2" y="9" width="4" height="11"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </a>
+        <a href="#" aria-label="Email" class="icon" title="Email">
+          <!-- Mail SVG -->
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"></path><path d="M22 6l-10 7L2 6"></path></svg>
+        </a>
+      </nav>
+    </header>
 
-  <section class="projects">
-    <h2>Projects</h2>
+    <section class="about">
+      <p class="lead">
+        I build fast, minimal web experiences. I enjoy turning small ideas into tidy, useful interfaces — and learning while shipping.
+      </p>
 
-    <div class="project">
-      <h3>Patreon Clone</h3>
-      <p>Next.js + MongoDB + Razorpay payment integration.</p>
-    </div>
+      <div class="blurb">
+        <p>I'm curious about how things work and how to make them simpler.</p>
+        <p>I solve problems by breaking them down and shipping small, iterative improvements.</p>
+        <p>I focus on clean UI, good developer ergonomics, and pragmatic code.</p>
+      </div>
+    </section>
 
-    <div class="project">
-      <h3>ToDo App</h3>
-      <p>Full-stack CRUD app using React + MongoDB.</p>
-    </div>
+    <section class="projects">
+      <h2 class="section-title">Selected projects</h2>
 
-    <div class="project">
-      <h3>Password Manager</h3>
-      <p>Local encryption + clean UI for storing credentials.</p>
-    </div>
+      <ul class="cards">
+        <li class="card">
+          <a href="#" class="card-link">
+            <div class="card-left">
+              <strong>Patreon Clone</strong>
+              <span class="muted">Next.js · MongoDB · Razorpay</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
 
-    <div class="project">
-      <h3>PHP + MySQL Paid Project</h3>
-      <p>Simple business web application built for a client.</p>
-    </div>
-  </section>
+        <li class="card">
+          <a href="#" class="card-link">
+            <div class="card-left">
+              <strong>ToDo App</strong>
+              <span class="muted">React · MongoDB · CRUD</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
 
-  <footer>
-    <p>© 2025 — Built by Aditya Bhise</p>
-  </footer>
+        <li class="card">
+          <a href="#" class="card-link">
+            <div class="card-left">
+              <strong>Password Manager</strong>
+              <span class="muted">Local encryption · Utility</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
 
+        <li class="card">
+          <a href="#" class="card-link">
+            <div class="card-left">
+              <strong>Client Business App</strong>
+              <span class="muted">PHP · MySQL · Delivered</span>
+            </div>
+            <span class="arrow">↗</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      <div>© <span id="year"></span> Aditya Bhise</div>
+      <div class="foot-right">Made minimal — no frameworks</div>
+    </footer>
+  </main>
+
+  <script>
+    // small nicety: auto year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
