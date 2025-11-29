@@ -214,15 +214,15 @@
 
     <main>
         <section id="home" class="hero-section">
-            <!-- <h1>
+            <h1>
                 I'm <span class="static-text">Aditya Bhise</span>.
-            </h1> -->
+            </h1>
             <h2>
-                I'm <span id="trailing-text" class="changing-text"> Web-Dev</span>
+                I'm <span id="trailing-text" class="changing-text">a Full-Stack Developer</span>
             </h2>
 
             <p class="tagline">
-                <b>Electronics and Telecommunication Engineering student</b> specializing in <b>React.js, Next.js, and Node.js</b>. Designing scalable, secure, and user-centric applications with a focus on clean architecture and maintainable code.
+                <b>Electronics and Telecommunication Engineering student</b> specializing in **React.js, Next.js, and Node.js**. Designing scalable, secure, and user-centric applications with a focus on clean architecture and maintainable code.
             </p>
         </section>
 
@@ -232,7 +232,7 @@
             <div class="project-grid">
                 <div class="project-card">
                     <h3>Patreon (Buy Me a Chai)</h3>
-                    <p>Creator support platform enabling seamless payments via Razorpay. Built with authentication, payment integration, and optimized API performance for real-time transactions[cite: 30, 31, 32, 33].</p>
+                    <p>Creator support platform enabling seamless payments via Razorpay. Built with authentication, payment integration, and optimized API performance for real-time transactions.</p>
                     <p class="tech-stack">Stack: Next.js, MongoDB, Razorpay, Vercel</p>
                     <div class="project-links">
                         <a href="https://buychai.vercel.app/" target="_blank">View Live &rarr;</a>
@@ -242,7 +242,7 @@
                 
                 <div class="project-card">
                     <h3>EpiNova (Disease Reporting App)</h3>
-                    <p>Mobile and web app for community-based disease reporting and alert generation. Features include a **backend REST API**, **ML-based outbreak prediction**, and live health data visualization[cite: 40, 41, 42, 43].</p>
+                    <p>Mobile and web app for community-based disease reporting and alert generation. Features include a **backend REST API**, **ML-based outbreak prediction**, and live health data visualization.</p>
                     <p class="tech-stack">Stack: React Native, Express.js, PostgreSQL (Supabase)</p>
                     <div class="project-links">
                         <a href="https://nativeapp-a2hg.onrender.com/" target="_blank">Backend &rarr;</a>
@@ -252,20 +252,21 @@
                 
                 <div class="project-card">
                     <h3>Perpage (Freelancing Marketplace)</h3>
-                    <p>A freelancing marketplace connecting clients and creators, featuring a role-based access system and secure **AWS S3 file uploads** for project files[cite: 35, 36, 37].</p>
+                    <p>A freelancing marketplace connecting clients and creators, featuring a role-based access system and secure **AWS S3 file uploads** for project files.</p>
                     <p class="tech-stack">Stack: Express.js, MongoDB, AWS S3</p>
                     <div class="project-links">
-                        <a href="perpage.onrender.com" target="_blank">View Live &rarr;</a>
+                        <a href="https://perpage.onrender.com" target="_blank">View Live &rarr;</a>
                         <a href="https://github.com/adityabhise1111/perpage" target="_blank">GitHub</a>
                     </div>
                 </div>
                 
                 <div class="project-card">
                     <h3>MathMastery Abacus (Freelance)</h3>
-                    <p>Full business website developed and deployed as a **paid freelance assignment**. Features student registration, course details, and dynamic content management[cite: 47, 48, 49, 50].</p>
+                    <p>Full business website developed and deployed as a **paid freelance assignment**. Features student registration, course details, and dynamic content management.</p>
                     <p class="tech-stack">Stack: PHP, MySQL</p>
                     <div class="project-links">
                         <a href="https://www.mathmasteryabacus.com/" target="_blank">View Live &rarr;</a>
+                        <a href="#" target="_blank">GitHub</a> 
                     </div>
                 </div>
             </div>
@@ -294,9 +295,9 @@
         document.addEventListener('DOMContentLoaded', () => {
             const textElement = document.getElementById('trailing-text');
             const words = [
-                "Web-Dev", 
-                "solving problems",
-                "building something new"
+                "a Full-Stack Developer", 
+                "Solving problems", 
+                "Building something New", // <--- COMMA ADDED HERE (FIX)
                 "Aditya Bhise"
             ];
             let wordIndex = 0;
